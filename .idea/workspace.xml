@@ -2,34 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf2e2aa7-98cf-4ce0-bd12-9f161acc3a97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/typescript-compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-overrides.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lnbridge/BTCLNtoEVM.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lnbridge/BTCLNtoEVMWrapper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lnbridge/EVMtoBTCLN.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lnbridge/EVMtoBTCLNWrapper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lnbridge/contracts/btclntoevmContract.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lnbridge/contracts/evmtobtclnContract.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lnbridge/contracts/wbtcContract.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Constants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BTCLNtoEVMPanel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EVMtoBTCLNPanel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SwapTab.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ValidatedInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WalletTab.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SwapTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SwapTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SwapTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SwapTab.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,9 +26,48 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/BTCLNtoEVMPanel.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="647">
+              <caret line="275" column="44" selection-start-line="275" selection-start-column="44" selection-end-line="275" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-20">
+              <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Constants.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1241">
+              <caret line="73" column="35" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/EVMtoBTCLNPanel.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
+            <state relative-caret-position="647">
               <caret line="184" column="11" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="11" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -55,70 +77,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/WalletTab.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="74" column="52" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Constants.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="62" column="28" lean-forward="true" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/SwapTab.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="314" column="49" selection-start-line="314" selection-start-column="42" selection-end-line="314" selection-end-column="49" />
+            <state relative-caret-position="204">
+              <caret line="282" column="30" lean-forward="true" selection-start-line="282" selection-start-column="30" selection-end-line="282" selection-end-column="30" />
               <folding>
                 <element signature="e#0#67#0" expanded="true" />
               </folding>
@@ -127,23 +89,38 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../crosslightning-libs/crosslightning-sdk-base/src/prices/CoinGeckoSwapPrice.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1088">
+              <caret line="67" column="47" selection-start-line="81" selection-end-line="85" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../crosslightning-libs/crosslightning-intermediary/src/prices/CoinGeckoSwapPrice.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1870">
+              <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ValidatedInput.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+            <state relative-caret-position="459">
+              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ValidatedInput.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-459">
-              <folding>
-                <element signature="e#0#86#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -157,10 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>calculateFeeForAmount</find>
-      <find>payBolt1</find>
-      <find>Con</find>
-      <find>Constnant</find>
       <find>ConstantBTCLNtoEVM</find>
       <find>getRequestState</find>
       <find>getCommit</find>
@@ -187,6 +160,10 @@
       <find>react</find>
       <find>Valida</find>
       <find>amountRef.</find>
+      <find>.getAddress()</find>
+      <find>EVM</find>
+      <find>s</find>
+      <find>Send to</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -200,7 +177,6 @@
         <option value="$PROJECT_DIR$/src/components/WalletTab.tsx.ts" />
         <option value="$PROJECT_DIR$/src/components/ValidatedInput.tsx" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/BTCLNtoEVMPanel.tsx.ts" />
         <option value="$PROJECT_DIR$/src/lib/lnbridge/contracts/IBTCLNtoEVMStorage.ts" />
         <option value="$PROJECT_DIR$/src/lib/lnbridge/BTCLNtoEVMLocalStorage.ts" />
@@ -214,37 +190,24 @@
         <option value="$PROJECT_DIR$/src/lib/lnbridge/EVMtoBTCLNWrapper.ts" />
         <option value="$PROJECT_DIR$/src/lib/lnbridge/BTCLNtoEVMWrapper.ts" />
         <option value="$PROJECT_DIR$/config-overrides.js" />
-        <option value="$PROJECT_DIR$/src/components/SwapTab.tsx" />
         <option value="$PROJECT_DIR$/src/components/BTCLNtoEVMPanel.tsx" />
         <option value="$PROJECT_DIR$/src/components/EVMtoBTCLNPanel.tsx" />
         <option value="$PROJECT_DIR$/src/components/WalletTab.tsx" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/Constants.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
+        <option value="$PROJECT_DIR$/../crosslightning-libs/crosslightning-sdk-base/src/prices/CoinGeckoSwapPrice.ts" />
+        <option value="$PROJECT_DIR$/../crosslightning-libs/crosslightning-intermediary/src/prices/CoinGeckoSwapPrice.ts" />
+        <option value="$PROJECT_DIR$/src/Constants.ts" />
+        <option value="$PROJECT_DIR$/src/components/SwapTab.tsx" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
-    <package-json value="$PROJECT_DIR$/package.json" />
-  </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/package.json" />
-    </packageJsonPaths>
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2648" />
-    <option name="y" value="62" />
-    <option name="width" value="1693" />
-    <option name="height" value="1025" />
+    <option name="x" value="-10" />
+    <option name="y" value="75" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -252,71 +215,58 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="btc-bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="btc-bridge" type="462c0819:PsiDirectoryNode" />
+              <item name="EVMLightning-webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EVMLightning-webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="btc-bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="btc-bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="btc-bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="btc-bridge" type="462c0819:PsiDirectoryNode" />
+              <item name="EVMLightning-webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EVMLightning-webapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="btc-bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="btc-bridge" type="462c0819:PsiDirectoryNode" />
+              <item name="EVMLightning-webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EVMLightning-webapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="btc-bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="btc-bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ValidatedInput.tsx" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="btc-bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="btc-bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="index.scss" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/adam/WebstormProjects/btc-bridge/src/lib/lnbridge/contracts/wbtcContract.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="C:\Users\adam\WebstormProjects\btc-bridge\node_modules\eslint" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="C:\crosslightning\EVMLightning-webapp\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="C:\crosslightning\EVMLightning-webapp\node_modules\eslint" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\adam\WebstormProjects\btc-bridge\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\crosslightning\EVMLightning-webapp\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\adam\WebstormProjects\btc-bridge" />
+      <recent name="C:\Users\adam\WebstormProjects\btc-bridge\src\lib\lnbridge" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\crosslightning\EVMLightning-webapp" />
       <recent name="C:\Users\adam\WebstormProjects\btc-bridge\src\lib\lnbridge\contracts" />
       <recent name="C:\Users\adam\WebstormProjects\btc-bridge" />
       <recent name="C:\Users\adam\WebstormProjects\btc-bridge\src\components" />
       <recent name="C:\Users\adam\WebstormProjects\btc-bridge\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\adam\WebstormProjects\btc-bridge" />
-      <recent name="C:\Users\adam\WebstormProjects\btc-bridge\src\lib\lnbridge" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -331,8 +281,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="start" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.start">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -345,6 +305,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -385,23 +346,27 @@
       <workItem from="1682548155256" duration="1465000" />
       <workItem from="1682877120266" duration="1597000" />
       <workItem from="1683015140588" duration="4022000" />
+      <workItem from="1683558393412" duration="450000" />
+      <workItem from="1683558909526" duration="4865000" />
+      <workItem from="1684148050139" duration="2660000" />
+      <workItem from="1684332182690" duration="2466000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134675000" />
+    <option name="totallyTimeSpent" value="145116000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2648" y="62" width="1693" height="1025" extended-state="0" />
+    <frame x="-8" y="60" width="1552" height="840" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5634119" visible="true" weight="0.27250755" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5579096" visible="true" weight="0.27260727" />
       <window_info id="Structure" order="1" sideWeight="0.4109397" side_tool="true" weight="0.24987654" />
-      <window_info id="npm" order="2" sideWeight="0.4365881" side_tool="true" visible="true" weight="0.27250755" />
+      <window_info id="npm" order="2" sideWeight="0.4420904" side_tool="true" visible="true" weight="0.27260727" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2673367" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43079096" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -410,7 +375,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.43001008" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.42917848" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -429,9 +394,6 @@
         <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/App.jsx" />
@@ -454,13 +416,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/WalletTab.tsx.ts" />
     <entry file="file://$PROJECT_DIR$/src/components/BTCLNtoEVMPanel.tsx.ts" />
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/lnbridge/contracts/IBTCLNtoEVMStorage.js" />
     <entry file="file://$PROJECT_DIR$/lib/lnbridge/contracts/btclntoevmContract.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -499,13 +454,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@ethersproject/abstract-provider/lib/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1972">
-          <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@ethersproject/abstract-provider/lib/index.d.ts" />
     <entry file="file://$PROJECT_DIR$/lib/lnbridge/BTCLNtoEVM.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8313">
@@ -520,27 +469,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/evmlightning-sdk/dist/Constants.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/evmlightning-sdk/dist/Constants.d.ts" />
     <entry file="file://$PROJECT_DIR$/lib/lnbridge/BTCLNtoEVMWrapper.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7123">
           <caret line="429" column="58" selection-start-line="429" selection-start-column="58" selection-end-line="429" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/BTCLNtoEVMPanel.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="109" column="79" selection-start-line="109" selection-start-column="79" selection-end-line="109" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -551,10 +484,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/WalletTab.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="74" column="52" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/BTCLNtoEVMPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="100" column="39" lean-forward="true" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -565,59 +515,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="1139">
+          <caret line="78" column="53" selection-start-line="78" selection-start-column="53" selection-end-line="78" selection-end-column="53" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WalletTab.tsx">
+    <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="74" column="52" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Constants.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="62" column="28" lean-forward="true" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
+        <state relative-caret-position="1241">
+          <caret line="73" column="35" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ValidatedInput.js">
+    <entry file="file://$PROJECT_DIR$/../crosslightning-libs/crosslightning-sdk-base/src/prices/CoinGeckoSwapPrice.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
+        <state relative-caret-position="1088">
+          <caret line="67" column="47" selection-start-line="81" selection-end-line="85" selection-end-column="9" />
           <folding>
-            <element signature="e#0#86#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/../crosslightning-libs/crosslightning-intermediary/src/prices/CoinGeckoSwapPrice.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="31" />
+        <state relative-caret-position="1870">
+          <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ValidatedInput.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        <state relative-caret-position="459">
+          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ValidatedInput.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/EVMtoBTCLNPanel.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
+        <state relative-caret-position="647">
           <caret line="184" column="11" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="11" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -625,13 +586,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/BTCLNtoEVMPanel.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="275" column="44" selection-start-line="275" selection-start-column="44" selection-end-line="275" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SwapTab.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="314" column="49" selection-start-line="314" selection-start-column="42" selection-end-line="314" selection-end-column="49" />
+        <state relative-caret-position="204">
+          <caret line="282" column="30" lean-forward="true" selection-start-line="282" selection-start-column="30" selection-end-line="282" selection-end-column="30" />
           <folding>
             <element signature="e#0#67#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
         </state>
       </provider>
     </entry>
