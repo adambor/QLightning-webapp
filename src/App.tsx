@@ -36,7 +36,8 @@ function App() {
                         FEConstants.tokenData
                     ),
                     bitcoinNetwork: BitcoinNetwork.MAINNET,
-                    addresses: EVMChains.POLYGON.addresses
+                    addresses: EVMChains.Q.addresses,
+                    registryUrl: EVMChains.Q.registryUrl
                 });
 
                 await swapper.init();

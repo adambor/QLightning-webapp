@@ -55,34 +55,34 @@ export const FEConstants = {
     //     }
     // },
     ethereum: {
-        chainId: 137,
-        chainName: "Polygon",
+        chainId: 35441,
+        chainName: "Q Protocol",
         nativeCurrency: {
-            name: "Polygon",
-            symbol: "MATIC",
+            name: "Q Token",
+            symbol: "QT",
             decimals: 18
         },
-        blockExplorerUrls: ["https://polygonscan.com/"],
-        rpcUrls: ["https://polygon-rpc.com"]
+        blockExplorerUrls: ["https://explorer.q.org/"],
+        rpcUrls: ["https://rpc.q.org"]
     },
-    wbtcToken: "0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6",
-    usdcToken: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
-    usdtToken: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+    wbtcToken: "0x864779670a7b3205580d0a3Be85744954ab075e7",
+    usdcToken: "0xC382cA00c56023C4A870473f14890A023Ca4706f",
+    usdtToken: "0x1234912185912561275418727185781012124012",
     ethToken: "0x0000000000000000000000000000000000000000",
     tokenData: {
-        "0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6": {
+        "0x864779670a7b3205580d0a3Be85744954ab075e7": {
             decimals: 8,
             symbol: "WBTC",
             coinId: "wrapped-bitcoin",
             displayDecimals: 8
         },
-        "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174": {
+        "0xC382cA00c56023C4A870473f14890A023Ca4706f": {
             decimals: 6,
             symbol: "USDC",
             coinId: "usd-coin",
             displayDecimals: 6
         },
-        "0xc2132D05D31c914a87C6611C10748AEb04B58e8F": {
+        "0x1234912185912561275418727185781012124012": {
             decimals: 6,
             symbol: "USDT",
             coinId: "tether",
@@ -90,8 +90,8 @@ export const FEConstants = {
         },
         "0x0000000000000000000000000000000000000000": {
             decimals: 18,
-            symbol: "MATIC",
-            coinId: "matic-network",
+            symbol: "Q",
+            coinId: "$fixed-1218",
             displayDecimals: 6
         }
     },
