@@ -1,5 +1,5 @@
 {
-  "name": "btc-bridge",
+  "name": "qlightning-webapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +17,7 @@
     "cross-fetch": "^3.1.5",
     "crypto-browserify": "^3.12.0",
     "ethers": "^5.7.2",
-    "evmlightning-sdk": "file:../EVMLightning-sdk",
+    "evmlightning-sdk": "^2.0.2",
     "process": "^0.11.10",
     "qrcode.react": "^3.1.0",
     "react": "^18.2.0",
