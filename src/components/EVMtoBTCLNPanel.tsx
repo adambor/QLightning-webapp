@@ -209,7 +209,8 @@ function EVMToBTCLNPanel(props: {
             try {
                 let swap;
                 if(props.swapType===SwapType.TO_BTCLN) {
-                    swap = await props.swapper.createEVMToBTCLNSwap(props.token, props.bolt11PayReq, 5*24*3600);
+                    console.log("Creating swap");
+                    swap = await props.swapper.createEVMToBTCLNSwap(props.token, props.bolt11PayReq, 7*24*3600, new BN(10), new BN(3000));
                 }
                 if(props.swapType===SwapType.TO_BTC) {
                     swap = await props.swapper.createEVMToBTCSwap(props.token, props.bolt11PayReq, new BN(props.amount.toString(10)));

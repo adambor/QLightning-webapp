@@ -27,6 +27,7 @@ function App() {
                     addresses: EVMChains.Q.addresses,
                     registryUrl: EVMChains.Q.registryUrl
                 });
+                console.log("Swapper: ", swapper);
                 await swapper.init();
                 console.log("Swapper initialized, getting claimable swaps...");
                 setClaimableBTCLNtoEVM(await swapper.getClaimableSwaps());

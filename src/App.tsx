@@ -40,6 +40,8 @@ function App() {
                     registryUrl: EVMChains.Q.registryUrl
                 });
 
+                console.log("Swapper: ", swapper);
+
                 await swapper.init();
 
                 console.log("Swapper initialized, getting claimable swaps...");

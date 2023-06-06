@@ -109,6 +109,11 @@ export function BTCLNtoEVMClaim(props: {
     const tokenDecimals = tokenData.displayDecimals;
     const tokenDivisor = new BigNumber(10).pow(new BigNumber(tokenData.decimals));
 
+    const nativeTokenData = FEConstants.tokenData[props.swap.getWrapper().contract.swapContract.getNativeCurrencyAddress().toString()];
+    const nativeTokenSymbol = nativeTokenData.symbol;
+    const nativeTokenDecimals = nativeTokenData.decimals;
+    const nativeTokenDivisor = new BigNumber(10).pow(new BigNumber(nativeTokenData.decimals));
+
     return (
         <div className="d-flex flex-column justify-content-center align-items-center">
             {state===BTCxtoSolSwapState.PR_CREATED && txId==null ? (
@@ -135,6 +140,10 @@ export function BTCLNtoEVMClaim(props: {
                     />
                 </>
             ) : ""}
+
+            <b>Security deposit: </b>
+            {props.swap==null ? "0."+"0".repeat(nativeTokenDecimals) : new BigNumber(props.swap.getSecurityDeposit().toString()).dividedBy(nativeTokenDivisor).toFixed(nativeTokenDecimals)} {nativeTokenSymbol}
+            <small>(Returned back to you upon successful swap)</small>
 
             <b>Amount: </b>{props.swap==null ? "0."+"0".repeat(tokenDecimals) : new BigNumber(props.swap.getOutAmountWithoutFee().toString()).dividedBy(tokenDivisor).toFixed(tokenDecimals)} {tokenSymbol}
             <b>Fee: </b>{props.swap==null ? "0."+"0".repeat(tokenDecimals) : new BigNumber(props.swap.getFee().toString()).dividedBy(tokenDivisor).toFixed(tokenDecimals)} {tokenSymbol}
@@ -288,6 +297,11 @@ export function BTCtoEVMClaim(props: {
     const tokenDecimals = tokenData.decimals;
     const tokenDivisor = new BigNumber(10).pow(new BigNumber(tokenData.decimals));
 
+    const nativeTokenData = FEConstants.tokenData[props.swap.getWrapper().contract.swapContract.getNativeCurrencyAddress().toString()];
+    const nativeTokenSymbol = nativeTokenData.symbol;
+    const nativeTokenDecimals = nativeTokenData.decimals;
+    const nativeTokenDivisor = new BigNumber(10).pow(new BigNumber(nativeTokenData.decimals));
+
     return (
         <div className="d-flex flex-column justify-content-center align-items-center">
             {state===BTCtoSolNewSwapState.CLAIM_COMMITED && txId==null ? (
@@ -314,6 +328,14 @@ export function BTCtoEVMClaim(props: {
                     />
                 </>
             ) : ""}
+
+            <b>Security deposit: </b>
+            {props.swap==null ? "0."+"0".repeat(nativeTokenDecimals) : new BigNumber(props.swap.getTotalDeposit().toString()).dividedBy(nativeTokenDivisor).toFixed(nativeTokenDecimals)} {nativeTokenSymbol}
+            <small>(Returned back to you upon successful swap)</small>
+
+            <b>Relayer fee: </b>
+            {props.swap==null ? "0."+"0".repeat(nativeTokenDecimals) : new BigNumber(props.swap.getClaimerBounty().toString()).dividedBy(nativeTokenDivisor).toFixed(nativeTokenDecimals)} {nativeTokenSymbol}
+            <small>(Fee for swap watchtowers)</small>
 
             <b>Amount: </b>{props.swap==null ? "0."+"0".repeat(tokenDecimals) : new BigNumber(props.swap.getOutAmountWithoutFee().toString()).dividedBy(tokenDivisor).toFixed(tokenDecimals)} {tokenSymbol}
             <b>Fee: </b>{props.swap==null ? "0."+"0".repeat(tokenDecimals) : new BigNumber(props.swap.getFee().toString()).dividedBy(tokenDivisor).toFixed(tokenDecimals)} {tokenSymbol}
