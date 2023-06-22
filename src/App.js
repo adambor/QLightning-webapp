@@ -6,9 +6,8 @@ import SwapTab from "./components/SwapTab";
 import { useEffect, useState } from "react";
 import { EVMtoBTCLNRefund } from "./components/EVMtoBTCLNPanel";
 import { BTCLNtoEVMClaim, BTCtoEVMClaim } from "./components/BTCLNtoEVMPanel";
-import { BitcoinNetwork, BTCLNtoSolSwap, BTCtoSolNewSwap, CoinGeckoSwapPrice, EVMSwapper, EVMChains } from "evmlightning-sdk";
+import { BTCLNtoSolSwap, BTCtoSolNewSwap, EVMSwapper } from "evmlightning-sdk";
 import * as BN from "bn.js";
-import { FEConstants } from './Constants';
 function App() {
     const [signer, setSigner] = useState();
     const [swapper, setSwapper] = useState();
@@ -21,12 +20,7 @@ function App() {
         console.log("New signer set: ", signer);
         (async () => {
             try {
-                const swapper = new EVMSwapper(signer, {
-                    pricing: new CoinGeckoSwapPrice(new BN(5000), FEConstants.tokenData),
-                    bitcoinNetwork: BitcoinNetwork.MAINNET,
-                    addresses: EVMChains.Q.addresses,
-                    registryUrl: EVMChains.Q.registryUrl
-                });
+                const swapper = new EVMSwapper(signer, EVMSwapper.createSwapperOptions("Q", new BN(5000)));
                 console.log("Swapper: ", swapper);
                 await swapper.init();
                 console.log("Swapper initialized, getting claimable swaps...");

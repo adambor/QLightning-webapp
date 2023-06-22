@@ -30,15 +30,7 @@ function App() {
         (async () => {
             try {
 
-                const swapper = new EVMSwapper(signer, {
-                    pricing: new CoinGeckoSwapPrice(
-                        new BN(5000),
-                        FEConstants.tokenData
-                    ),
-                    bitcoinNetwork: BitcoinNetwork.MAINNET,
-                    addresses: EVMChains.Q.addresses,
-                    registryUrl: EVMChains.Q.registryUrl
-                });
+                const swapper = new EVMSwapper(signer, EVMSwapper.createSwapperOptions("Q", new BN(5000)));
 
                 console.log("Swapper: ", swapper);
 

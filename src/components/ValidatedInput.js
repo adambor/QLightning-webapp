@@ -38,11 +38,11 @@ function ValidatedInput(props) {
         validate: () => {
             let validated = null;
             if (props.type === "number") {
-                validated = numberValidator(props.value || state.value, props);
+                validated = numberValidator(props.value == null ? state.value : props.value, props);
             }
             if (validated == null)
                 if (props.onValidate != null) {
-                    validated = props.onValidate(props.value || state.value);
+                    validated = props.onValidate(props.value == null ? state.value : props.value);
                 }
             setState(initial => {
                 return Object.assign(Object.assign({}, initial), { validated });
@@ -50,7 +50,7 @@ function ValidatedInput(props) {
             return validated == null;
         },
         getValue: () => {
-            return props.value || (state.value === "" ? props.defaultValue : state.value);
+            return props.value == null ? (state.value === "" ? props.defaultValue : state.value) : props.value;
         },
         input: props.type === "textarea" ? inputTextAreaRef : inputRef
     };
@@ -79,7 +79,7 @@ function ValidatedInput(props) {
                                         setState(obj);
                                         if (props.onChange != null)
                                             props.onChange(evnt.target.value);
-                                    }, value: props.value || state.value }, { children: props.options == null ? "" : props.options.map((e) => {
+                                    }, value: props.value == null ? state.value : props.value }, { children: props.options == null ? "" : props.options.map((e) => {
                                         return (_jsx("option", Object.assign({ value: e.key }, { children: e.value }), e.key));
                                     }) })), props.elementEnd || "", props.textEnd ? (_jsx(InputGroup.Text, { children: props.textEnd })) : ""] })) : props.type === "textarea" ? (_jsxs(_Fragment, { children: [props.elementStart || "", props.textStart ? (_jsx(InputGroup.Text, { children: props.textStart })) : "", _jsx(Form.Control, { readOnly: props.readOnly, disabled: props.disabled, ref: inputTextAreaRef, size: props.size, isInvalid: !!(props.validated || state.validated), type: props.type || "text", as: "textarea", placeholder: props.placeholder, defaultValue: props.defaultValue, onChange: (evnt) => {
                                         const obj = {};
@@ -94,7 +94,7 @@ function ValidatedInput(props) {
                                         setState(obj);
                                         if (props.onChange != null)
                                             props.onChange(evnt.target.value);
-                                    }, value: props.value || state.value }), props.copyEnabled ? (_jsx(InputGroup.Text, { children: _jsx(OverlayTrigger, Object.assign({ placement: "top", overlay: _jsx(Tooltip, Object.assign({ id: "copy-tooltip" }, { children: "Copy" })) }, { children: _jsx("a", Object.assign({ href: "#", onClick: (e) => {
+                                    }, value: props.value == null ? state.value : props.value }), props.copyEnabled ? (_jsx(InputGroup.Text, { children: _jsx(OverlayTrigger, Object.assign({ placement: "top", overlay: _jsx(Tooltip, Object.assign({ id: "copy-tooltip" }, { children: "Copy" })) }, { children: _jsx("a", Object.assign({ href: "#", onClick: (e) => {
                                                 e.preventDefault();
                                                 refObj.input.current.select();
                                                 refObj.input.current.setSelectionRange(0, 99999);
@@ -113,7 +113,7 @@ function ValidatedInput(props) {
                                         setState(obj);
                                         if (props.onChange != null)
                                             props.onChange(evnt.target.value);
-                                    }, min: props.min != null ? props.min.toString(10) : null, max: props.max != null ? props.max.toString(10) : null, step: props.step != null ? props.step.toString(10) : null, value: props.value || state.value }), props.copyEnabled ? (_jsx(InputGroup.Text, { children: _jsx(OverlayTrigger, Object.assign({ placement: "top", overlay: _jsx(Tooltip, Object.assign({ id: "copy-tooltip" }, { children: "Copy" })) }, { children: _jsx("a", Object.assign({ href: "#", onClick: (e) => {
+                                    }, min: props.min != null ? props.min.toString(10) : null, max: props.max != null ? props.max.toString(10) : null, step: props.step != null ? props.step.toString(10) : null, value: props.value == null ? state.value : props.value }), props.copyEnabled ? (_jsx(InputGroup.Text, { children: _jsx(OverlayTrigger, Object.assign({ placement: "top", overlay: _jsx(Tooltip, Object.assign({ id: "copy-tooltip" }, { children: "Copy" })) }, { children: _jsx("a", Object.assign({ href: "#", onClick: (e) => {
                                                 e.preventDefault();
                                                 refObj.input.current.select();
                                                 refObj.input.current.setSelectionRange(0, 99999);

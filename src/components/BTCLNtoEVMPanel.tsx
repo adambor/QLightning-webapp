@@ -8,7 +8,6 @@ import {FEConstants} from "../Constants";
 import {IBTCxtoSolSwap, BTCxtoSolSwapState, EVMSwapper, SwapType, BTCtoSolNewSwapState, BTCtoSolNewSwap, BTCLNtoSolSwap} from "evmlightning-sdk";
 import {Signer} from "ethers";
 import * as BN from "bn.js";
-import {Bitcoin} from "evmlightning-sdk/dist/Constants";
 
 export function BTCLNtoEVMClaim(props: {
     signer: Signer,
@@ -21,10 +20,28 @@ export function BTCLNtoEVMClaim(props: {
 
     const [state, setState] = useState<number>(0);
 
-    const [txId, setTxId] = useState<string>(null);
-    const [confirmations, setConfirmations] = useState<number>(null);
-    const [targetConfirmations, setTargetConfirmations] = useState<number>(null);
+    const [expired, setExpired] = useState<boolean>(false);
+    const [currentTimestamp, setCurrentTimestamp] = useState<number>(Date.now());
+    useEffect(() => {
+        let timer;
+        timer = setInterval(() => {
+            const now = Date.now();
+            if(props.swap.getState()===BTCxtoSolSwapState.PR_PAID) {
+                if(props.swap.getExpiry()<now && !sendingTx) {
+                    props.onError("Swap expired!");
+                    if(timer!=null) clearInterval(timer);
+                    setExpired(true);
+                    timer = null;
+                    return;
+                }
+            }
+            setCurrentTimestamp(now);
+        }, 500);
 
+        return () => {
+            if(timer!=null) clearInterval(timer);
+        }
+    }, [props.swap]);
 
     const commit = async() => {
         setSendingTx(true);
@@ -59,24 +76,6 @@ export function BTCLNtoEVMClaim(props: {
         setSendingTx(false);
     };
 
-    const commitAndClaim = async() => {
-        setSendingTx(true);
-
-        try {
-            await props.swap.commitAndClaim();
-            props.onSuccess();
-        } catch (e) {
-            console.error(e);
-            if(typeof(e)==="string") {
-                props.onError(e);
-            } else {
-                props.onError(e.message);
-            }
-        }
-
-        setSendingTx(false);
-    };
-
     useEffect(() => {
 
         if(props.swap==null) return;
@@ -88,6 +87,8 @@ export function BTCLNtoEVMClaim(props: {
         if(props.swap.getState()===BTCxtoSolSwapState.PR_CREATED) {
             props.swap.waitForPayment(_abortController.signal, null).then(() => {
                 //
+            }).catch(e => {
+                props.onError("Receiving error:"+e.message);
             });
         }
 
@@ -116,7 +117,11 @@ export function BTCLNtoEVMClaim(props: {
 
     return (
         <div className="d-flex flex-column justify-content-center align-items-center">
-            {state===BTCxtoSolSwapState.PR_CREATED && txId==null ? (
+            {state===BTCxtoSolSwapState.PR_CREATED ? (props.swap.isLNURL() ? (
+                <>
+                    <b>Receiving through LNURL-withdraw</b>
+                </>
+            ) : (
                 <>
                     <ValidatedInput
                         className="mb-4"
@@ -139,7 +144,7 @@ export function BTCLNtoEVMClaim(props: {
                         id={"qrCodeCanvas"}
                     />
                 </>
-            ) : ""}
+            )) : ""}
 
             <b>Security deposit: </b>
             {props.swap==null ? "0."+"0".repeat(nativeTokenDecimals) : new BigNumber(props.swap.getSecurityDeposit().toString()).dividedBy(nativeTokenDivisor).toFixed(nativeTokenDecimals)} {nativeTokenSymbol}
@@ -152,31 +157,23 @@ export function BTCLNtoEVMClaim(props: {
             {state===BTCxtoSolSwapState.PR_CREATED ? (
                 <div className="d-flex flex-column justify-content-center align-items-center mt-4">
                     <Spinner animation="border" />
-                    {txId!=null ? (
-                        <>
-                            <b>Waiting for confirmations...</b>
-                            <div className="mt-2 d-flex flex-column">
-                                <b>Tx ID: </b>
-                                <small>{txId}</small>
-                            </div>
-                            <div className="mt-2 d-flex flex-column">
-                                <b>Confirmations: {confirmations}/{targetConfirmations}</b>
-                                <small>You will be able to claim the funds once<br/>your bitcoin transaction gets {targetConfirmations} confirmations</small>
-                            </div>
-                        </>
-                    ) : (
-                        <b>Waiting for payment...</b>
-                    )}
+                    <b>Waiting for payment...</b>
                 </div>
             ) : (state===BTCxtoSolSwapState.PR_PAID || state===BTCxtoSolSwapState.CLAIM_COMMITED) ? (
                 <>
+                    {state===BTCxtoSolSwapState.PR_PAID && !sendingTx ? (
+                        <>
+                            <b>Expires in: </b>{props.swap==null ? "0" : Math.floor((props.swap.getExpiry()-currentTimestamp)/1000)} seconds
+                        </>
+                    ) : ""}
+
                     {state===BTCxtoSolSwapState.PR_PAID ? (
-                        <Button onClick={commit} disabled={sendingTx}>
+                        <Button onClick={commit} disabled={sendingTx || expired}>
                             1. Begin claim {props.swap==null ? "" : new BigNumber(props.swap.getOutAmount().toString()).dividedBy(tokenDivisor).toFixed(tokenDecimals)} {tokenSymbol}
                         </Button>
                     ) : ""}
 
-                    <Button onClick={claim} disabled={sendingTx || state===BTCxtoSolSwapState.PR_PAID}>
+                    <Button onClick={claim} disabled={sendingTx || state===BTCxtoSolSwapState.PR_PAID || expired}>
                         {state===BTCxtoSolSwapState.PR_PAID ? "2. " : ""}Finish claim {props.swap==null ? "" : new BigNumber(props.swap.getOutAmount().toString()).dividedBy(tokenDivisor).toFixed(tokenDecimals)} {tokenSymbol}
                     </Button>
                 </>
@@ -211,6 +208,30 @@ export function BTCtoEVMClaim(props: {
     const [targetConfirmations, setTargetConfirmations] = useState<number>(null);
 
     const [secondsRemaining, setSecondsRemaining] = useState<number>(null);
+
+    const [expired, setExpired] = useState<boolean>(false);
+    const [currentTimestamp, setCurrentTimestamp] = useState<number>(Date.now());
+    useEffect(() => {
+        let timer;
+        timer = setInterval(() => {
+            const now = Date.now();
+            if(props.swap.getState()===BTCtoSolNewSwapState.PR_CREATED) {
+                console.log("State: PR_CREATED", props.swap);
+                if(props.swap.getExpiry()<now && !sendingTx) {
+                    props.onError("Swap expired!");
+                    if(timer!=null) clearInterval(timer);
+                    setExpired(true);
+                    timer = null;
+                    return;
+                }
+            }
+            setCurrentTimestamp(now);
+        }, 500);
+
+        return () => {
+            if(timer!=null) clearInterval(timer);
+        }
+    }, [props.swap]);
 
     const commit = async() => {
         setSendingTx(true);
@@ -376,7 +397,12 @@ export function BTCtoEVMClaim(props: {
                     {/*{isBeginRequired ? "2. " : ""}Finish claim {props.swap==null ? "" : new BigNumber(props.swap.getOutAmount().toString()).dividedBy(Bitcoin.satsMultiplier).toFixed(8)} BTC*/}
                     {/*</Button>*/}
 
-                    <Button onClick={commit} disabled={sendingTx}>
+                    {!sendingTx ? (
+                        <>
+                            <b>Expires in: </b>{props.swap==null ? "0" : Math.floor((props.swap.getExpiry()-currentTimestamp)/1000)} seconds
+                        </>
+                    ) : ""}
+                    <Button onClick={commit} disabled={sendingTx || expired}>
                         Begin claim of {props.swap==null ? "" : new BigNumber(props.swap.getOutAmount().toString()).dividedBy(tokenDivisor).toFixed(tokenDecimals)} {tokenSymbol}
                     </Button>
                 </>
@@ -403,6 +429,7 @@ export function BTCtoEVMClaim(props: {
 
 function BTCLNtoEVMPanel(props: {
     token: string,
+    lnurl?: string,
     amount: BigNumber,
     signer: Signer,
     swapper: EVMSwapper,
@@ -430,7 +457,12 @@ function BTCLNtoEVMPanel(props: {
                 try {
                     let createdSwap;
                     if(props.swapType===SwapType.FROM_BTCLN) {
-                        createdSwap = await props.swapper.createBTCLNtoEVMSwap(props.token, new BN(props.amount.toString(10)));
+                        if(props.lnurl!=null && props.lnurl!=="") {
+                            console.log("Creating swap with lnurl: ", props.lnurl);
+                            createdSwap = await props.swapper.createBTCLNtoEVMSwapViaLNURL(props.lnurl, props.token, new BN(props.amount.toString(10)));
+                        } else {
+                            createdSwap = await props.swapper.createBTCLNtoEVMSwap(props.token, new BN(props.amount.toString(10)));
+                        }
                     }
                     if(props.swapType===SwapType.FROM_BTC) {
                         createdSwap = await props.swapper.createBTCtoEVMSwap(props.token, new BN(props.amount.toString(10)));
@@ -451,7 +483,7 @@ function BTCLNtoEVMPanel(props: {
         return () => {
             _abortController.abort();
         };
-    }, [props.signer, props.amount]);
+    }, [props.swapper, props.signer, props.amount, props.lnurl]);
 
     return (
         <div className="d-flex flex-column justify-content-center align-items-center">

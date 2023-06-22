@@ -80,10 +80,10 @@ function ValidatedInput(props : {
         validate: (): boolean => {
             let validated: string = null;
             if (props.type === "number") {
-                validated = numberValidator(props.value || state.value, props);
+                validated = numberValidator(props.value==null ? state.value : props.value, props);
             }
             if (validated == null) if (props.onValidate != null) {
-                validated = props.onValidate(props.value || state.value);
+                validated = props.onValidate(props.value==null ? state.value : props.value);
             }
             setState(initial => {
                 return {...initial, validated}
@@ -92,7 +92,7 @@ function ValidatedInput(props : {
 
         },
         getValue: () => {
-            return props.value || (state.value==="" ? props.defaultValue : state.value);
+            return props.value==null ? (state.value==="" ? props.defaultValue : state.value) : props.value;
         },
         input: props.type==="textarea" ? inputTextAreaRef : inputRef
     };
@@ -151,7 +151,7 @@ function ValidatedInput(props : {
                                     setState(obj);
                                     if(props.onChange!=null) props.onChange(evnt.target.value);
                                 }}
-                                value={props.value || state.value}
+                                value={props.value==null ? state.value : props.value}
                             >
                                 {props.options==null ? "" : props.options.map((e) => {
                                     return (<option key={e.key} value={e.key}>{e.value}</option>)
@@ -194,7 +194,7 @@ function ValidatedInput(props : {
                                     setState(obj);
                                     if(props.onChange!=null) props.onChange(evnt.target.value);
                                 }}
-                                value={props.value || state.value}
+                                value={props.value==null ? state.value : props.value}
                             />
                             {props.copyEnabled ? (
                                 <InputGroup.Text>
@@ -251,7 +251,7 @@ function ValidatedInput(props : {
                                 min={props.min!=null ? props.min.toString(10): null}
                                 max={props.max!=null ? props.max.toString(10): null}
                                 step={props.step!=null ? props.step.toString(10): null}
-                                value={props.value || state.value}
+                                value={props.value==null ? state.value : props.value}
                             />
                             {props.copyEnabled ? (
                                 <InputGroup.Text>

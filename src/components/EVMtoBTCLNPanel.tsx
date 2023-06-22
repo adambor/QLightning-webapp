@@ -25,6 +25,29 @@ export function EVMtoBTCLNRefund(props: {
 
     const abortController = useRef<AbortController>(null);
 
+    const [expired, setExpired] = useState<boolean>(false);
+    const [currentTimestamp, setCurrentTimestamp] = useState<number>(Date.now());
+    useEffect(() => {
+        let timer;
+        timer = setInterval(() => {
+            const now = Date.now();
+            if(props.swap.getState()===SolToBTCxSwapState.CREATED) {
+                if(props.swap.getExpiry()<now && !sendingTx) {
+                    props.onError("Swap expired!");
+                    if(timer!=null) clearInterval(timer);
+                    setExpired(true);
+                    timer = null;
+                    return;
+                }
+            }
+            setCurrentTimestamp(now);
+        }, 500);
+
+        return () => {
+            if(timer!=null) clearInterval(timer);
+        }
+    }, [props.swap]);
+
     useEffect(() => {
         abortController.current = new AbortController();
         if(props.swap==null) {
@@ -133,12 +156,13 @@ export function EVMtoBTCLNRefund(props: {
 
             {state===SolToBTCxSwapState.CREATED ? (
                 <>
+                    <b>Expires in: </b>{props.swap==null ? "0" : Math.floor((props.swap.getExpiry()-currentTimestamp)/1000)} seconds
                     {approveRequired ? (
-                        <Button disabled={sendingTx} onClick={approve}>
+                        <Button disabled={sendingTx || expired} onClick={approve}>
                             1. Approve spend {props.swap==null ? "" : new BigNumber(props.swap.getInAmount().toString()).dividedBy(tokenDivisor).toFixed(tokenDecimals)} {tokenSymbol}
                         </Button>
                     ) : ""}
-                    <Button disabled={sendingTx || approveRequired} onClick={pay}>
+                    <Button disabled={sendingTx || approveRequired || expired} onClick={pay}>
                         {approveRequired ? "2. " : ""}Pay {props.swap==null ? "" : new BigNumber(props.swap.getInAmount().toString()).dividedBy(tokenDivisor).toFixed(tokenDecimals)} {tokenSymbol}
                     </Button>
                 </>
@@ -186,6 +210,7 @@ function EVMToBTCLNPanel(props: {
     token: string,
     bolt11PayReq: string,
     amount?: BigNumber,
+    comment?: string,
     signer: Signer,
     swapper: EVMSwapper,
     swapType: SwapType.TO_BTC | SwapType.TO_BTCLN
@@ -209,8 +234,11 @@ function EVMToBTCLNPanel(props: {
             try {
                 let swap;
                 if(props.swapType===SwapType.TO_BTCLN) {
-                    console.log("Creating swap");
-                    swap = await props.swapper.createEVMToBTCLNSwap(props.token, props.bolt11PayReq, 7*24*3600, new BN(10), new BN(3000));
+                    if(props.swapper.isValidLNURL(props.bolt11PayReq)) {
+                        swap = await props.swapper.createEVMToBTCLNSwapViaLNURL(props.token, props.bolt11PayReq, new BN(props.amount.toString(10)), props.comment, 5*24*3600);
+                    } else {
+                        swap = await props.swapper.createEVMToBTCLNSwap(props.token, props.bolt11PayReq, 5*24*3600);
+                    }
                 }
                 if(props.swapType===SwapType.TO_BTC) {
                     swap = await props.swapper.createEVMToBTCSwap(props.token, props.bolt11PayReq, new BN(props.amount.toString(10)));
@@ -228,7 +256,7 @@ function EVMToBTCLNPanel(props: {
             setLoading(false);
         })();
 
-    }, [props.signer, props.bolt11PayReq]);
+    }, [props.swapper, props.amount, props.bolt11PayReq]);
 
     return (
         <div className="d-flex flex-column justify-content-center align-items-center">
